@@ -20,4 +20,4 @@ SoftUni course JavaScript Applications - March 2019: All tasks with their soluti
 
 №   |Tasks							|Descriptions																							| Labs																										| Exercises																													|Progress																													
 :--:|-------------------------------|:-----------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------:|:-------------:
-1	|REST Services				|[Description]()			|[Lab]()		|[Exercises]()			|![Progress](http://progressed.io/bar/0)
+1	|AJAX and jQuery AJAX			|[Description](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Resources)		|[Lab](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/01.AJAXAndJQueryAJAX-Lab)	|[Exercises]()			|![Progress](http://progressed.io/bar/5)
