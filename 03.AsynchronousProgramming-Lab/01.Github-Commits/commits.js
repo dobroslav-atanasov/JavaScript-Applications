@@ -1,5 +1,3 @@
-/// <reference path="../typings/globals/jquery/index.d.ts" />
-
 function loadCommits() {
     let username = $('#username').val();
     let repo = $('#repo').val();
