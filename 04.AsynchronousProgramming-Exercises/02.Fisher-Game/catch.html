@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Biggest Catch</title>
+    <link rel="stylesheet" href="catch.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="catch.js"></script>
+</head>
+
+<body>
+    <h1>Biggest Catches</h1>
+    <fieldset id="main">
+        <legend>Catches</legend>
+        <div id="catches">
+            <div class="catch" data-id="<id-goes-here>">
+                <label>Angler</label>
+                <input type="text" class="angler" value="Paulo Amorim" />
+                <label>Weight</label>
+                <input type="number" class="weight" value="636" />
+                <label>Species</label>
+                <input type="text" class="species" value="Atlantic Blue Marlin" />
+                <label>Location</label>
+                <input type="text" class="location" value="Vitória, Brazil" />
+                <label>Bait</label>
+                <input type="text" class="bait" value="trolled pink" />
+                <label>Capture Time</label>
+                <input type="number" class="captureTime" value="80" />
+                <button class="update">Update</button>
+                <button class="delete">Delete</button>
+            </div>
+        </div>
+    </fieldset>
+    <div id="aside">
+        <button class="load">Load</button>
+        <fieldset id="addForm">
+            <legend>Add Catch</legend>
+            <label>Angler</label>
+            <input type="text" class="angler" />
+            <label>Weight</label>
+            <input type="number" class="weight" />
+            <label>Species</label>
+            <input type="text" class="species" />
+            <label>Location</label>
+            <input type="text" class="location" />
+            <label>Bait</label>
+            <input type="text" class="bait" />
+            <label>Capture Time</label>
+            <input type="number" class="captureTime" />
+            <button class="add">Add</button>
+        </fieldset>
+    </div>
+    <script>attachEvents()</script>
+</body>
+
+</html>
