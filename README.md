@@ -10,7 +10,7 @@ SoftUni course JavaScript Applications - March 2019: All tasks with their soluti
 - REST Services
 - AJAX and jQuery AJAX
 - Asynchronous Programming
-- JS for Front-End
+- JS for Front-End (Bootstrap)
 - Templating
 - Rounting and Architecture
 
@@ -22,3 +22,4 @@ SoftUni course JavaScript Applications - March 2019: All tasks with their soluti
 :--:|-------------------------------|:-----------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------:|:-------------------------------------------------------------------------------------------------------------------------:|:-------------:
 1	|AJAX and jQuery AJAX			|[Description](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Resources)		|[Lab](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/01.AJAXAndJQueryAJAX-Lab)			|[Exercises](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/02.AJAXAndJQueryAJAX-Exercises)		|![Progress](http://progressed.io/bar/100?title=completed)
 2	|Asynchronous Programming		|[Description](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Resources)		|[Lab](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/03.AsynchronousProgramming-Lab)	|[Exercises](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/04.AsynchronousProgramming-Exercises)|![Progress](http://progressed.io/bar/90)
+3	|JS for Front-End				|[Description](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Resources)		|[Lab](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/05.JSForFrondEnd-Lab)				|[Exercises]()|![Progress](http://progressed.io/bar/5)
