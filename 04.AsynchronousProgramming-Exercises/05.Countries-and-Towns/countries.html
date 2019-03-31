@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Countries and Towns</title>
+    <link rel="stylesheet" href="conuntries.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="countries.js"></script>
+</head>
+
+<body>
+    <h1>Countries and Towns</h1>
+    <button id="showBtn">Show Countries</button>
+
+    <div id="country">
+        <label>Country</label>
+        <input type="text" id="countryName" />
+        <button id="createCountryBtn">Create Country</button>
+    </div>
+    <div id="town">
+        <label>Town</label>
+        <input type="text" id="townName" />
+        <label>Coutnry</label>
+        <input type="text" id="townCountryName" />
+        <button id="createTownBtn">Create Town</button>
+    </div>
+    <div id="townSuccess">        
+    </div>
+    <div id="countries">
+        <h2>All Countries</h2>
+    </div>
+
+    <script>
+        attachEvents();
+    </script>
+</body>
+
+</html>
