@@ -25,3 +25,9 @@ SoftUni course JavaScript Applications - March 2019: All tasks with their soluti
 3	|JS for Front-End				|[Description](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Resources)		|[Lab](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/05.JSForFrondEnd-Lab)				|[Exercises](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/06.JSForFrondEnd-Exercises)			|![Progress](http://progressed.io/bar/100?title=completed)
 4	|Templating						|[Description](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Resources)		|[Lab](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/07.Templating-Lab)					|[Exercises](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/08.Templating-Exercises)				|![Progress](http://progressed.io/bar/100?title=completed)
 5	|Rounting and Architecture		|[Description](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Resources)		|[Lab](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/09.RountingAndArchitecture-Lab)	|																															|![Progress](http://progressed.io/bar/100?title=completed)
+
+> **Exams**
+
+|Date				|Name		|Descriptions																											|Solutions
+|:-----------------:|:---------:|:---------------------------------------------------------------------------------------------------------------------:|:----------:
+|21 December 2018	|Spotify	|[Description](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Resources/Exam-21.12.2018)		|[Solution](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Exam-21.12.2018)
