@@ -20,6 +20,9 @@ $(() => {
     // LOGOUT
     this.get('#/logout', handlers.logoutUser);
 
+    // ALL PETS
+    this.get('#/dashboard', handlers.getAllPets);
+
     // // home page routes
     // this.get('/index.html', handlers.getHome);
     // this.get('/', handlers.getHome);

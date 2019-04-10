@@ -39,7 +39,7 @@ handlers.registerUser = function (ctx) {
   userService.register(username, password).then((res) => {
     userService.saveSession(res);
     notifications.showInfo('User registration successful.');
-    ctx.redirect('#/home');
+    ctx.redirect('#/dashboard');
   }).catch(function (err) {
     notifications.showError(err.responseJSON.description);
   });
@@ -59,7 +59,7 @@ handlers.loginUser = function (ctx) {
   userService.login(username, password).then((res) => {
     userService.saveSession(res);
     notifications.showInfo('Login successful.');
-    ctx.redirect('#/home');
+    ctx.redirect('#/dashboard');
   }).catch(function (err) {
     notifications.showError('Invalid username or password');
     ctx.redirect('#/login');
