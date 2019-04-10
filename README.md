@@ -30,4 +30,5 @@ SoftUni course JavaScript Applications - March 2019: All tasks with their soluti
 
 |Date				|Name		|Descriptions																											|Solutions
 |:-----------------:|:---------:|:---------------------------------------------------------------------------------------------------------------------:|:----------:
+|16 December 2018	|Pets		|[Description](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Resources/Exam-16.12.2018)		|[Solution](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Exam-16.12.2018)
 |21 December 2018	|Spotify	|[Description](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Resources/Exam-21.12.2018)		|[Solution](https://github.com/dobroslav-atanasov/JavaScript-Applications/tree/master/Exam-21.12.2018)
