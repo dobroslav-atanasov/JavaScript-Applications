@@ -23,6 +23,10 @@ $(() => {
     // ALL PETS
     this.get('#/dashboard', handlers.getAllPets);
 
+    // ADD PET
+    this.get('#/add', handlers.getAddPet);
+    this.post('#/add', handlers.postAddPet);
+
     // // home page routes
     // this.get('/index.html', handlers.getHome);
     // this.get('/', handlers.getHome);
