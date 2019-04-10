@@ -31,11 +31,13 @@ $(() => {
     this.get('#/mysongs', handlers.getMySongs);
 
     // LIKE SONG
-    this.get('#/like', handlers.likeSong);
+    this.get('#/like/:songId', handlers.likeSong);
 
     // LISTEN SONG
+    this.get('#/listen/:songId', handlers.listenSong);
 
     // REMOVE SONG
+    this.get('#/remove/:songId', handlers.removeSong);
   });
   
   app.run();

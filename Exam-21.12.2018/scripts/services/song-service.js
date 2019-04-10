@@ -17,9 +17,29 @@ const songService = (() => {
         return kinvey.get('appdata', 'songs', 'kinvey');
     }
 
+    function removeSong(songId) {
+        return kinvey.remove('appdata', `songs/${songId}`, 'kinvey');
+    }
+
+    function getSongById(songId) {
+        return kinvey.get('appdata', `songs/${songId}`, 'kinvey');
+    }
+
+    function likeSong(songId, song) {
+        return kinvey.update('appdata', `songs/${songId}`, 'kinvey', song);
+    }
+
+    function listenSong(songId, song) {
+        return kinvey.update('appdata', `songs/${songId}`, 'kinvey', song);
+    }
+
     return {
         createSong,
         getSongs,
-        getMySongs
+        getMySongs,
+        removeSong,
+        getSongById,
+        likeSong,
+        listenSong
     }
 })()

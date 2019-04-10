@@ -59,8 +59,8 @@ handlers.getAllSongs = function (context) {
     }).then(function () {
         songService.getSongs()
             .then((songs) => {
-                let otherSongs = songs.filter(x => x._acl.creator !== sessionStorage.getItem('userId')).sort((a, b) => a.likes - b.likes);
-                let mySongs = songs.filter(x => x._acl.creator === sessionStorage.getItem('userId')).sort((a, b) => a.likes - b.likes);
+                let otherSongs = songs.filter(x => x._acl.creator !== sessionStorage.getItem('userId')).sort((a, b) => b.likes - a.likes);
+                let mySongs = songs.filter(x => x._acl.creator === sessionStorage.getItem('userId')).sort((a, b) => b.likes - a.likes);
 
                 context.otherSongs = otherSongs;
                 context.mySongs = mySongs;
@@ -85,7 +85,7 @@ handlers.getMySongs = function (context) {
     }).then(function () {
         songService.getSongs()
             .then((songs) => {
-                let mySongs = songs.filter(x => x._acl.creator === sessionStorage.getItem('userId')).sort((a, b) => a.likes - b.likes);
+                let mySongs = songs.filter(x => x._acl.creator === sessionStorage.getItem('userId')).sort((a, b) => b.likes - a.likes);
 
                 context.mySongs = mySongs;
                 this.partial('./templates/mysongs.hbs');
@@ -107,12 +107,83 @@ handlers.likeSong = function (context) {
         footer: './templates/footer.hbs',
         songs: './templates/songs.hbs'
     }).then(function () {
-
+        let songId = document.URL.substring(document.URL.lastIndexOf('/') + 2);
+        songService.getSongById(songId)
+            .then((song) => {
+                song.likes++;
+                songService.likeSong(songId, song)
+                    .then((res) => {
+                        notify.showInfo('Liked!');
+                        songService.getSongs()
+                            .then((songs) => {
+                                context.redirect('#/allsongs');
+                            }).catch(function (err) {
+                                console.log(err);
+                            });
+                    });
+            }).catch(function (err) {
+                console.log(err);
+            });
     }).catch(function (err) {
         console.log(err);
     });
 }
 
 // LISTEN SONG
+handlers.listenSong = function (context) {
+    context.isAuth = userService.isAuth();
+    context.username = sessionStorage.getItem('username');
+
+    context.loadPartials({
+        header: './templates/header.hbs',
+        footer: './templates/footer.hbs',
+        songs: './templates/songs.hbs'
+    }).then(function () {
+        let songId = document.URL.substring(document.URL.lastIndexOf('/') + 2);
+        songService.getSongById(songId)
+            .then((song) => {
+                song.listen++;
+                songService.listenSong(songId, song)
+                    .then((res) => {
+                        notify.showInfo(`You just listened ${song.title}`);
+                        songService.getSongs()
+                            .then((songs) => {
+                                context.redirect('#/allsongs');
+                            }).catch(function (err) {
+                                console.log(err);
+                            });
+                    });
+            }).catch(function (err) {
+                console.log(err);
+            });
+    }).catch(function (err) {
+        console.log(err);
+    });
+}
 
 // REMOVE SONG
+handlers.removeSong = function (context) {
+    context.isAuth = userService.isAuth();
+    context.username = sessionStorage.getItem('username');
+
+    context.loadPartials({
+        header: './templates/header.hbs',
+        footer: './templates/footer.hbs',
+        songs: './templates/songs.hbs'
+    }).then(function () {
+        let songId = document.URL.substring(document.URL.lastIndexOf('/') + 2);
+        songService.removeSong(songId).then((res) => {
+            notify.showInfo('Song removed successfully!');
+            songService.getSongs()
+                .then((songs) => {
+                    context.redirect('#/allsongs');
+                }).catch(function (err) {
+                    console.log(err);
+                });
+        }).catch(function (err) {
+            console.log(err);
+        });
+    }).catch(function (err) {
+        console.log(err);
+    });
+}

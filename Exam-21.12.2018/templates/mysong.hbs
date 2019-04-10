@@ -4,7 +4,7 @@
     <h5>Artist: {{artist}}</h5>
     <img class="cover" src="{{imageURL}}" />
     <p>Likes: {{likes}}; Listened {{listen}} times</p>
-    <a href="#/remove"><button type="button" class="btn btn-danger mt-4">Remove</button></a>
-    <a href="#/listen"><button type="button" class="btn btn-success mt-4">Listen</button></a>
+    <a href="#/remove/:{{_id}}"><button type="button" class="btn btn-danger mt-4">Remove</button></a>
+    <a href="#/listen/:{{_id}}"><button type="button" class="btn btn-success mt-4">Listen</button></a>
 </div>
 {{/each}}
