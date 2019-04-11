@@ -1,22 +1,28 @@
 const handlers = {}
 
 $(() => {
-  const app = Sammy('#root', function () {
+  const app = Sammy('#container', function () {
     this.use('Handlebars', 'hbs');
-    // home page routes
+
+    // HOME
     this.get('/index.html', handlers.getHome);
     this.get('/', handlers.getHome);
     this.get('#/home', handlers.getHome);
 
-    // user routes
+    // REGISTER
     this.get('#/register', handlers.getRegister);
-    this.get('#/login', handlers.getLogin);
-
     this.post('#/register', handlers.registerUser);
+
+    // LOGIN
+    this.get('#/login', handlers.getLogin);
     this.post('#/login', handlers.loginUser);
+
+    // LOGOUT
     this.get('#/logout', handlers.logoutUser);
 
-    // ADD YOUR ROUTES HERE
+    // CATALOG
+    this.get('#/catalog', handlers.getCatalog);
   });
+
   app.run();
 });

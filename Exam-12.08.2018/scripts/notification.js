@@ -1,25 +1,29 @@
 const notifications = (() => {
   $(document).on({
-    ajaxStart: () => $('#loading').fadeIn(),
-    ajaxStop: () => $('#loading').fadeOut()
+    ajaxStart: () => $('#loadingBox').show(),
+    ajaxStop: () => $('#loadingBox').fadeOut()
   })
-
-  function showSuccess(message) {
-    let successBox = $('#info');
-    successBox.text(message);
-    successBox.fadeIn();
-    successBox.fadeOut(3000);
+  function showInfo(message) {
+    let infoBox = $('#infoBox')
+    infoBox.find('span').text(message)
+    infoBox.fadeIn()
+    setTimeout(() => infoBox.fadeOut(), 3000)
   }
 
   function showError(message) {
-    let errorBox = $('#error');
-    errorBox.text(message);
-    errorBox.fadeIn();
-    errorBox.fadeOut(3000);
+    let errorBox = $('#errorBox')
+    errorBox.find('span').text(message)
+    errorBox.fadeIn()
+    setTimeout(() => errorBox.fadeOut(), 3000)
+  }
+
+  function handleError(reason) {
+    showError(reason.responseJSON.description)
   }
 
   return {
-    showSuccess,
-    showError
+    showInfo,
+    showError,
+    handleError
   }
 })()

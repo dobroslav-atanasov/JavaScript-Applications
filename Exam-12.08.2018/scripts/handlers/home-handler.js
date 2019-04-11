@@ -3,10 +3,10 @@ handlers.getHome = function (ctx) {
   ctx.username = sessionStorage.getItem('username');
 
   ctx.loadPartials({
-    header: '../templates/common/header.hbs',
-    footer: '../templates/common/footer.hbs'
+    header: './templates/header.hbs',
+    footer: './templates/footer.hbs'
   }).then(function () {
-    this.partial('templates/home.hbs');
+    this.partial('./templates/home.hbs');
   }).catch(function (err) {
     console.log(err);
   });

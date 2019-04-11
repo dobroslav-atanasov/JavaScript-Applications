@@ -6,6 +6,7 @@ const userService = (() => {
   function saveSession(res) {
     sessionStorage.setItem('username', res.username);
     sessionStorage.setItem('authtoken', res._kmd.authtoken);
+    sessionStorage.setItem('userId', res._acl.creator);
   }
 
   function register(username, password) {
