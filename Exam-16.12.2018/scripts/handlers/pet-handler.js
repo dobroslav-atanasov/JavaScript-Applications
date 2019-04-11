@@ -115,7 +115,7 @@ handlers.getCats = function (context) {
     }).then(function () {
         petService.getAllPets()
             .then((pets) => {
-                let otherPets = pets.filter(x => x.category === 'Cat' && x._acl.creator !== sessionStorage.getItem('userId'));
+                let otherPets = pets.filter(x => x.category === 'Cat' && x._acl.creator !== sessionStorage.getItem('userId')).sort((a, b) => b.likes - a.likes);
                 context.pets = otherPets;
                 this.partial('./templates/dashboard.hbs');
             }).catch(function (err) {
@@ -138,7 +138,7 @@ handlers.getDogs = function (context) {
     }).then(function () {
         petService.getAllPets()
             .then((pets) => {
-                let otherPets = pets.filter(x => x.category === 'Dog' && x._acl.creator !== sessionStorage.getItem('userId'));
+                let otherPets = pets.filter(x => x.category === 'Dog' && x._acl.creator !== sessionStorage.getItem('userId')).sort((a, b) => b.likes - a.likes);
                 context.pets = otherPets;
                 this.partial('./templates/dashboard.hbs');
             }).catch(function (err) {
@@ -161,7 +161,7 @@ handlers.getParrots = function (context) {
     }).then(function () {
         petService.getAllPets()
             .then((pets) => {
-                let otherPets = pets.filter(x => x.category === 'Parrot' && x._acl.creator !== sessionStorage.getItem('userId'));
+                let otherPets = pets.filter(x => x.category === 'Parrot' && x._acl.creator !== sessionStorage.getItem('userId')).sort((a, b) => b.likes - a.likes);
                 context.pets = otherPets;
                 this.partial('./templates/dashboard.hbs');
             }).catch(function (err) {
@@ -184,7 +184,7 @@ handlers.getReptiles = function (context) {
     }).then(function () {
         petService.getAllPets()
             .then((pets) => {
-                let otherPets = pets.filter(x => x.category === 'Reptile' && x._acl.creator !== sessionStorage.getItem('userId'));
+                let otherPets = pets.filter(x => x.category === 'Reptile' && x._acl.creator !== sessionStorage.getItem('userId')).sort((a, b) => b.likes - a.likes);
                 context.pets = otherPets;
                 this.partial('./templates/dashboard.hbs');
             }).catch(function (err) {
@@ -207,7 +207,7 @@ handlers.getOther = function (context) {
     }).then(function () {
         petService.getAllPets()
             .then((pets) => {
-                let otherPets = pets.filter(x => x.category === 'Other' && x._acl.creator !== sessionStorage.getItem('userId'));
+                let otherPets = pets.filter(x => x.category === 'Other' && x._acl.creator !== sessionStorage.getItem('userId')).sort((a, b) => b.likes - a.likes);
                 context.pets = otherPets;
                 this.partial('./templates/dashboard.hbs');
             }).catch(function (err) {

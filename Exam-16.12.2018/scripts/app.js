@@ -38,20 +38,11 @@ $(() => {
     this.get('#/reptiles', handlers.getReptiles);
     this.get('#/other', handlers.getOther);
 
-    // // home page routes
-    // this.get('/index.html', handlers.getHome);
-    // this.get('/', handlers.getHome);
-    // this.get('#/home', handlers.getHome);
+    // EDIT
 
-    // // user routes
-    // this.get('#/register', handlers.getRegister);
-    // this.get('#/login', handlers.getLogin);
+    // PET
 
-    // this.post('#/register', handlers.registerUser);
-    // this.post('#/login', handlers.loginUser);
-    // this.get('#/logout', handlers.logoutUser);
-
-    // // ADD YOUR ROUTES HERE
+    // DELETE
   });
   app.run();
 });
