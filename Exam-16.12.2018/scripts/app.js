@@ -39,10 +39,14 @@ $(() => {
     this.get('#/other', handlers.getOther);
 
     // EDIT
+    this.get('#/details/:id', handlers.getDetailsPet);
+    this.post('#/details/:id', handlers.postDetailsPet);
 
     // PET
+    
 
     // DELETE
+    this.get('#/remove/:id', handlers.removePet);
   });
   app.run();
 });

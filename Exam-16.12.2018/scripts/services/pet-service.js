@@ -3,7 +3,7 @@ const petService = (() => {
         return kinvey.get('appdata', 'pets', 'kinvey');
     }
 
-    function addPet(name, description, imageURL, category){
+    function addPet(name, description, imageURL, category) {
         return kinvey.post('appdata', 'pets', 'kinvey', {
             name,
             description,
@@ -13,8 +13,23 @@ const petService = (() => {
         });
     }
 
+    function getPet(id) {
+        return kinvey.get('appdata', `pets/${id}`, 'kinvey');
+    }
+
+    function editPet(id, pet) {
+        return kinvey.update('appdata', `pets/${id}`, 'kinvey', pet);
+    }
+
+    function remove(id) {
+        return kinvey.remove('appdata', `pets/${id}`, 'kinvey');
+    }
+
     return {
         getAllPets,
-        addPet
+        addPet,
+        getPet,
+        editPet,
+        remove
     }
 })()

@@ -1,0 +1,21 @@
+{{> header}}
+
+<section class="detailsMyPet">
+    <h3>{{pet.name}}</h3>
+    {{#if user}}
+    <p>Pet counter: <i class="fas fa-heart"></i> {{pet.likes}}</p>
+    {{else}}
+    <p>Pet counter: {{pet.likes}} <a href="#/pet/{{pet._id}}"><button class="button"><i class="fas fa-heart"></i>
+                Pet</button></a>
+    </p>
+    {{/if}}
+    <p class="img"><img src="{{pet.imageURL}}"></p>
+    {{#if user}}
+    <form action="#/details/{{pet._id}}" method="POST">
+        <textarea type="text" name="description">{{pet.description}}</textarea>
+        <button class="button"> Save</button>
+    </form>
+    {{/if}}
+</section>
+
+{{> footer}}

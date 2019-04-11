@@ -217,3 +217,74 @@ handlers.getOther = function (context) {
         console.log(err);
     });
 }
+
+// GET DETAILS
+handlers.getDetailsPet = function (context) {
+    context.isAuth = userService.isAuth();
+    context.username = sessionStorage.getItem('username');
+
+    context.loadPartials({
+        header: './templates/header.hbs',
+        footer: './templates/footer.hbs'
+    }).then(function () {
+        let id = context.params.id;
+        petService.getPet(id)
+            .then((pet) => {
+                let isCreator = (sessionStorage.getItem('userId') === pet._acl.creator);
+                this.partial('./templates/details.hbs', {
+                    user: isCreator,
+                    pet: pet
+                });
+            }).catch(function (err) {
+                console.log(err);
+            });
+    }).catch(function (err) {
+        console.log(err);
+    });
+}
+
+// POST DETAILS
+handlers.postDetailsPet = function (context) {
+    context.isAuth = userService.isAuth();
+    context.username = sessionStorage.getItem('username');
+
+    context.loadPartials({
+        header: './templates/header.hbs',
+        footer: './templates/footer.hbs'
+    }).then(function () {
+        petService.getPet(context.params.id)
+            .then((pet) => {
+                pet.description = context.params.description;
+                petService.editPet(context.params.id, pet)
+                    .then((res) => {
+                        notifications.showInfo('Updated successfully!');
+                        context.redirect('#/dashboard');
+                    }).catch(function (err) {
+                        console.log(err);
+                    });
+            });
+    }).catch(function (err) {
+        console.log(err);
+    });
+}
+
+// REMOVE PET
+handlers.removePet = function (context) {
+    context.isAuth = userService.isAuth();
+    context.username = sessionStorage.getItem('username');
+
+    context.loadPartials({
+        header: './templates/header.hbs',
+        footer: './templates/footer.hbs'
+    }).then(function () {
+        petService.remove(context.params.id)
+            .then((res) => {
+                notifications.showInfo('Pet removed successfully!');
+                context.redirect('#/dashboard');
+            }).catch(function (err) {
+                console.log(err);
+            });
+    }).catch(function (err) {
+        console.log(err);
+    });
+}
