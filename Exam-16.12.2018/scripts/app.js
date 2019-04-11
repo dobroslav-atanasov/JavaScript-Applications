@@ -27,6 +27,17 @@ $(() => {
     this.get('#/add', handlers.getAddPet);
     this.post('#/add', handlers.postAddPet);
 
+    // MY PETS
+    this.get('#/mypets', handlers.getMyPets);
+
+    // CATEGORIS
+    this.get('#/all', handlers.getAll);
+    this.get('#/cats', handlers.getCats);
+    this.get('#/dogs', handlers.getDogs);
+    this.get('#/parrots', handlers.getParrots);
+    this.get('#/reptiles', handlers.getReptiles);
+    this.get('#/other', handlers.getOther);
+
     // // home page routes
     // this.get('/index.html', handlers.getHome);
     // this.get('/', handlers.getHome);
