@@ -25,11 +25,16 @@ const petService = (() => {
         return kinvey.remove('appdata', `pets/${id}`, 'kinvey');
     }
 
+    function like(id, pet) {
+        return kinvey.update('appdata', `pets/${id}`, 'kinvey', pet);
+    }
+
     return {
         getAllPets,
         addPet,
         getPet,
         editPet,
-        remove
+        remove,
+        like
     }
 })()

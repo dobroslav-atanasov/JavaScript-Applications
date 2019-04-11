@@ -43,10 +43,11 @@ $(() => {
     this.post('#/details/:id', handlers.postDetailsPet);
 
     // PET
-    
+    this.get('#/pet/:id', handlers.petPet);
 
     // DELETE
     this.get('#/remove/:id', handlers.removePet);
   });
+  
   app.run();
 });

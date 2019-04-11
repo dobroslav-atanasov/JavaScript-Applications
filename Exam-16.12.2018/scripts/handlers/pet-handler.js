@@ -10,7 +10,7 @@ handlers.getAllPets = function (context) {
     }).then(function () {
         petService.getAllPets()
             .then((pets) => {
-                let otherPets = pets.filter(x => x._acl.creator !== sessionStorage.getItem('userId'));
+                let otherPets = pets.filter(x => x._acl.creator !== sessionStorage.getItem('userId')).sort((a, b) => b.likes - a.likes);
                 context.pets = otherPets;
                 this.partial('./templates/dashboard.hbs');
             }).catch(function (err) {
@@ -266,6 +266,27 @@ handlers.postDetailsPet = function (context) {
     }).catch(function (err) {
         console.log(err);
     });
+}
+
+// PET PET
+handlers.petPet = function (context) {
+    context.isAuth = userService.isAuth();
+    context.username = sessionStorage.getItem('username');
+
+    petService.getPet(context.params.id)
+        .then((pet) => {
+            if (pet._acl.creator !== sessionStorage.getItem('userId')) {
+                pet.likes++;
+                petService.like(context.params.id, pet)
+                    .then((res) => {
+                        context.redirect('#/dashboard');
+                    }).catch(function (err) {
+                        console.log(err);
+                    });
+            }
+        }).catch(function (err) {
+            console.log(err);
+        });
 }
 
 // REMOVE PET
