@@ -54,10 +54,11 @@ handlers.loginUser = function (ctx) {
   let password = ctx.params.password;
   userService.login(username, password).then((res) => {
     userService.saveSession(res);
-    notifications.showInfo('User logged in successfully');
-    ctx.redirect('#/home');
+    notifications.showInfo('Login successful.');
+    ctx.redirect('#/catalog');
   }).catch(function (err) {
-    notifications.showError(err.responseJSON.description);
+    notifications.showError('Invalid username or password!');
+    ctx.redirect('#/login');
   });
 }
 
