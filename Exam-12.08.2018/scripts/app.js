@@ -29,6 +29,16 @@ $(() => {
 
     // MY LISTINGS
     this.get('#/mylistings', handlers.getMyListings);
+
+    // DETAILS
+    this.get('#/details/:id', handlers.getDetails);
+
+    // EDIT
+    this.get('#/edit/:id', handlers.getEdit);
+    this.post("#/edit/:id", handlers.postEdit);
+
+    // DELETE
+    this.get('#/delete/:id', handlers.deleteCar);
   });
 
   app.run();

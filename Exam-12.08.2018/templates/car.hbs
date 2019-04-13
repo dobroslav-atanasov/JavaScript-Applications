@@ -14,14 +14,14 @@
         <div id="data-buttons">
             <ul>
                 <li class="action">
-                    <a href="#" class="button-carDetails">Details</a>
+                    <a href="#/details/{{_id}}" class="button-carDetails">Details</a>
                 </li>
                 {{#if isMyCar}}
                 <li class="action">
-                    <a href="#" class="button-carDetails">edit</a>
+                    <a href="#/edit/{{_id}}" class="button-carDetails">edit</a>
                 </li>
                 <li class="action">
-                    <a href="#" class="button-carDetails">delete</a>
+                    <a href="#/delete/{{_id}}" class="button-carDetails">delete</a>
                 </li>
                 {{/if}}
             </ul>
