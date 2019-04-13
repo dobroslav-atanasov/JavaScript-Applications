@@ -22,6 +22,13 @@ $(() => {
 
     // CATALOG
     this.get('#/catalog', handlers.getCatalog);
+
+    // CREATE
+    this.get('#/create', handlers.getCreate);
+    this.post('#/create', handlers.createCar);
+
+    // MY LISTINGS
+    this.get('#/mylistings', handlers.getMyListings);
   });
 
   app.run();
