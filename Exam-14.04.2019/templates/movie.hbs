@@ -1,0 +1,10 @@
+{{#each movies}}
+
+<div class="movie">
+    <h2>Title: {{title}}</h2>
+    <img src="{{imageUrl}}">
+    <p>Available Tickets: {{tickets}}</p><button><a href="#/buyticket/{{_id}}">Buy Ticket</a></button>
+    <button><a href="#/details/{{_id}}">Details</a></button>
+</div>
+
+{{/each}}
